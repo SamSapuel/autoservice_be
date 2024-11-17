@@ -10,11 +10,11 @@ import cz.cvut.fel.autoserviceIS.repository.EmployeeOrderItemRepository;
 import cz.cvut.fel.autoserviceIS.repository.EmployeeOrderRepository;
 import cz.cvut.fel.autoserviceIS.repository.EmployeeRepository;
 import cz.cvut.fel.autoserviceIS.repository.EmployeesCustomersOrderRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

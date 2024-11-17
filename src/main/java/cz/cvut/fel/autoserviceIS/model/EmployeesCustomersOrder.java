@@ -1,8 +1,8 @@
 package cz.cvut.fel.autoserviceIS.model;
 
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
 
 @Table(name = "employees_customers_order")
 @AllArgsConstructor

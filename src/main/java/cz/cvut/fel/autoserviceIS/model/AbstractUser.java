@@ -1,9 +1,8 @@
 package cz.cvut.fel.autoserviceIS.model;
 
 import cz.cvut.fel.autoserviceIS.model.enums.AccessType;
+import jakarta.persistence.*;
 import lombok.*;
-
-import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor

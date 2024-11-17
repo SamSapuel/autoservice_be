@@ -5,10 +5,10 @@ import cz.cvut.fel.autoserviceIS.exception.EntityNotFoundException;
 import cz.cvut.fel.autoserviceIS.mapper.ItemMapper;
 import cz.cvut.fel.autoserviceIS.model.Item;
 import cz.cvut.fel.autoserviceIS.repository.ItemsRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 

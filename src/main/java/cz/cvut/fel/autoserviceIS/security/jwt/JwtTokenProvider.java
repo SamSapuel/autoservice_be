@@ -38,31 +38,31 @@ public class JwtTokenProvider {
                 .compact();
     }
 
-    public Long getUserIdFromJWT(String token) {
-        Claims claims = Jwts.parser()
-                .setSigningKey(jwtSecret)
-                .parseClaimsJws(token)
-                .getBody();
-        return Long.parseLong(claims.getSubject());
-    }
-
-    public String getUserNameFromJwtToken(String token) {
-        return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().getSubject();
-    }
-
-    public boolean validateToken(String authToken) {
-        try {
-            Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
-            return true;
-        } catch (MalformedJwtException ex) {
-            LOG.error("Invalid JWT token");
-        } catch (ExpiredJwtException ex) {
-            LOG.error("Expired JWT token");
-        } catch (UnsupportedJwtException ex) {
-            LOG.error("Unsupported JWT token");
-        } catch (IllegalArgumentException ex) {
-            LOG.error("JWT claims string is empty.");
-        }
-        return false;
-    }
+//    public Long getUserIdFromJWT(String token) {
+//        Claims claims = Jwts.parser()
+//                .setSigningKey(jwtSecret)
+//                .parseClaimsJws(token)
+//                .getBody();
+//        return Long.parseLong(claims.getSubject());
+//    }
+//
+//    public String getUserNameFromJwtToken(String token) {
+//        return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().getSubject();
+//    }
+//
+//    public boolean validateToken(String authToken) {
+//        try {
+//            Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
+//            return true;
+//        } catch (MalformedJwtException ex) {
+//            LOG.error("Invalid JWT token");
+//        } catch (ExpiredJwtException ex) {
+//            LOG.error("Expired JWT token");
+//        } catch (UnsupportedJwtException ex) {
+//            LOG.error("Unsupported JWT token");
+//        } catch (IllegalArgumentException ex) {
+//            LOG.error("JWT claims string is empty.");
+//        }
+//        return false;
+//    }
 }

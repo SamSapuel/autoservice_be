@@ -9,6 +9,12 @@ import cz.cvut.fel.autoserviceIS.security.model.LoginStatus;
 import cz.cvut.fel.autoserviceIS.security.service.LoginService;
 import cz.cvut.fel.autoserviceIS.service.CustomerService;
 import cz.cvut.fel.autoserviceIS.service.EmployeeService;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.HttpServletRequest;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,11 +23,6 @@ import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
-import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Service("oauth2authSuccessHandler")
@@ -35,8 +36,12 @@ public class Oauth2AuthenticationSuccessHandler implements AuthenticationSuccess
 
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
-                                        Authentication authentication) throws IOException {
+    public void onAuthenticationSuccess(HttpServletRequest request, jakarta.servlet.http.HttpServletResponse response, FilterChain chain, Authentication authentication) throws IOException, ServletException {
+        AuthenticationSuccessHandler.super.onAuthenticationSuccess(request, response, chain, authentication);
+    }
+
+    @Override
+    public void onAuthenticationSuccess(HttpServletRequest request, jakarta.servlet.http.HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         DefaultOidcUser oauthUser = (DefaultOidcUser) authentication.getPrincipal();
         String email = oauthUser.getAttribute("email");
         String username = oauthUser.getAttribute("username");

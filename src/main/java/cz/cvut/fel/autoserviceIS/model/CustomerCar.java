@@ -1,8 +1,7 @@
 package cz.cvut.fel.autoserviceIS.model;
 
+import jakarta.persistence.*;
 import lombok.*;
-
-import javax.persistence.*;
 
 @Table(name = "customer_car", schema = "public", catalog = "postgres")
 @AllArgsConstructor

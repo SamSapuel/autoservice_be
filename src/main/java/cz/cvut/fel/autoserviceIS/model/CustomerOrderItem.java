@@ -1,8 +1,7 @@
 package cz.cvut.fel.autoserviceIS.model;
 
+import jakarta.persistence.*;
 import lombok.*;
-
-import javax.persistence.*;
 
 @Entity
 @Table(name = "customer_order_item", schema = "public", catalog = "postgres")

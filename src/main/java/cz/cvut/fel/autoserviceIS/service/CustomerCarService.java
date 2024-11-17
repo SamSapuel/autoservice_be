@@ -8,10 +8,10 @@ import cz.cvut.fel.autoserviceIS.model.*;
 import cz.cvut.fel.autoserviceIS.repository.*;
 import cz.cvut.fel.autoserviceIS.security.service.model.UserDetailsImpl;
 import io.jsonwebtoken.lang.Assert;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 

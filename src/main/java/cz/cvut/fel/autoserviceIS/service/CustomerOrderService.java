@@ -9,10 +9,10 @@ import cz.cvut.fel.autoserviceIS.repository.CustomerOrderItemRepository;
 import cz.cvut.fel.autoserviceIS.repository.CustomerOrderRepository;
 import cz.cvut.fel.autoserviceIS.repository.EmployeesCustomersOrderRepository;
 import cz.cvut.fel.autoserviceIS.security.service.model.UserDetailsImpl;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 

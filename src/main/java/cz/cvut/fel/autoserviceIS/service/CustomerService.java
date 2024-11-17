@@ -5,11 +5,11 @@ import cz.cvut.fel.autoserviceIS.exception.EntityNotFoundException;
 import cz.cvut.fel.autoserviceIS.mapper.CustomerMapper;
 import cz.cvut.fel.autoserviceIS.model.*;
 import cz.cvut.fel.autoserviceIS.repository.*;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 

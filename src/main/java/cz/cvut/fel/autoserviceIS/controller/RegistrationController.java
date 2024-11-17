@@ -9,6 +9,7 @@ import cz.cvut.fel.autoserviceIS.security.model.Response;
 import cz.cvut.fel.autoserviceIS.service.CustomerService;
 import cz.cvut.fel.autoserviceIS.service.EmployeeService;
 import cz.cvut.fel.autoserviceIS.utils.RestUtils;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
@@ -17,7 +18,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.EntityNotFoundException;
 
 @Slf4j
 @RestController
